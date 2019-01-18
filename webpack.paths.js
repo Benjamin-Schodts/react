@@ -18,6 +18,7 @@ module.exports = {
         output: {
             path: 'dist',
             filename: 'js/scripts.js'
-        }
+        },
+        react: './src/js/react.jsx'
     }
 };

@@ -4,10 +4,20 @@
       "browser": true,
       "es6": true
     },
+    "extends": [
+      "airbnb-base",
+      "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
     "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
       "sourceType": "module"
     },
-    "extends": "airbnb-base",
+    "plugins": [
+        "react"
+    ],
     "rules": {
       "arrow-parens": ["error", "always"],
       "comma-dangle": ["error", "never"],
@@ -26,7 +36,8 @@
       "space-before-function-paren": ["error", "never"],
       "no-param-reassign": ["error", { "props": false }],
       "import/prefer-default-export": "off",
-      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+      "react/prop-types": 0
     },
     "globals": {
       "module": true

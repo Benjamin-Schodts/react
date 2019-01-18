@@ -4,7 +4,6 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import multi from 'multi-loader';
 import path from 'path';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';
@@ -13,18 +12,29 @@ import paths from './webpack.paths';
 
 // Webpack Configuration
 module.exports = {
-    entry: path.resolve(__dirname, paths.webpack.entry),
+    entry: path.resolve(__dirname, paths.webpack.react),
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: multi(
-                        'babel-loader',
-                        'eslint-loader'
-                    )
-                }
+                use: [
+                    'babel-loader',
+                    'eslint-loader'
+                ]
+            },
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-react']
+                        }
+                    },
+                    'eslint-loader'
+                ]
             },
             {
                 test: /\.scss$/,
@@ -81,7 +91,7 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: ['.js', '.scss'],
+        extensions: ['.js', '.jsx', '.scss'],
         modules: [path.resolve(__dirname, paths.cradle.source), 'node_modules']
     },
     stats: {
