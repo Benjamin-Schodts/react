@@ -14,7 +14,7 @@ module.exports = {
         stylelint: './src/scss/**/*.scss'
     },
     webpack: {
-        entry: './src/js/app.js',
+        entry: './src/js/index.js',
         output: {
             path: 'dist',
             filename: 'js/scripts.js'

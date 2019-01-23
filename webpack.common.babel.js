@@ -6,13 +6,14 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 
 import paths from './webpack.paths';
 
 // Webpack Configuration
 module.exports = {
-    entry: path.resolve(__dirname, paths.webpack.react),
+    entry: path.resolve(__dirname, paths.webpack.entry),
     module: {
         rules: [
             {
@@ -74,11 +75,12 @@ module.exports = {
                 }
             ]
         ),
-        new MiniCssExtractPlugin({
-            filename: paths.cradle.css.output
-        }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, paths.cradle.source, 'index.html')
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new MiniCssExtractPlugin({
+            filename: paths.cradle.css.output
         }),
         new StyleLintPlugin({
             syntax: 'scss'

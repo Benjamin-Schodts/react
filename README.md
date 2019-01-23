@@ -1,2 +1,2 @@
 # workspace
-Node boilerplate workspace
+React boilerplate workspace

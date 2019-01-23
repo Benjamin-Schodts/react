@@ -1,18 +1,14 @@
 /* ==========================================================================
-   General - Base
+   Assignment 1 - User Output
    ========================================================================== */
 
-html {
-    background-color: $white;
+.userOutput {
+    margin-top: 10px;
+
+    font-weight: bold;
 }
 
-body {
-    width: 100% !important;
+p {
     margin: 0;
     padding: 0;
-
-    background: $white;
-
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
 }

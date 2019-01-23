@@ -9,6 +9,7 @@ import paths from './webpack.paths';
 module.exports = merge(common, {
     devServer: {
         contentBase: path.join(__dirname, paths.cradle.source),
+        hot: true,
         stats: {
             all: false,
             assets: true,
