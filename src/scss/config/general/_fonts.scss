@@ -1,12 +1,17 @@
 /* ==========================================================================
-   Sizes
+   Config - General - Fonts
 
    This file is exclusively intended for setting up variables
    Never add styles directly to this file
    ========================================================================== */
 
-/* Screen sizes
+/* Font family
    ========================================================================== */
-$screen-sm: 768px;
-$screen-md: 992px;
-$screen-xl: 1200px;
+$font-family--primary: "Source sans pro", "Arial", "Helvetica", sans-serif;
+
+/* Text sizes
+   ========================================================================== */
+$font-size--smaller:    14px;
+$font-size:             16px;
+$font-size--larger:     18px;
+$font-size--large:      29px;

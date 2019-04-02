@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Components - Blocks - Button
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    padding: 17px 24px;
+
+    border: 0;
+    border-radius: 4px;
+
+    outline: 0;
+
+    cursor: pointer;
+
+    &--primary {
+        color: $button-color;
+
+        background-color: $button-background;
+    }
+
+    &--image {
+        width: 28px;
+        height: 28px;
+        padding: 0;
+
+        object {
+            pointer-events: none;
+        }
+    }
+
+    + .btn {
+        margin-left: 2px;
+    }
+}

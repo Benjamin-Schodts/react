@@ -1,12 +1,14 @@
 /* ==========================================================================
-   Config
+   Components
 
    This file is exclusively intended for setting up imports
    Never add styles directly to this file
    ========================================================================== */
 
+/* Default
+   ========================================================================== */
+@import "blocks/blocks";
+
 /* General
    ========================================================================== */
-@import "general/colors";
-@import "general/sizes";
-@import "general/fonts";
+@import "shoppingBasket/shoppingBasket";

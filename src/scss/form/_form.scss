@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Config
+   Forms - form
 
    This file is exclusively intended for setting up imports
    Never add styles directly to this file
@@ -7,6 +7,4 @@
 
 /* General
    ========================================================================== */
-@import "general/colors";
-@import "general/sizes";
-@import "general/fonts";
+@import "form-control";

@@ -1,0 +1,29 @@
+/* ==========================================================================
+   General - Header
+   ========================================================================== */
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin: 25px 0 45px;
+
+    font: {
+        size: $font-size--large;
+        weight: 600;
+    }
+
+    color: $header-color;
+
+    text-transform: uppercase;
+}
+
+h3 {
+    font: {
+        size: $font-size--larger;
+        weight: 600;
+    }
+}

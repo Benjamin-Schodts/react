@@ -1,0 +1,14 @@
+.app {
+    width: 100%;
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+
+    height: 100vh;
+}
+
+.step1 {
+    background-color: $grey--lighter;
+}

@@ -1,0 +1,116 @@
+.basket-entry {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 11px 0 13px;
+
+    border-bottom: 2px solid $border-color;
+}
+
+.basket-entry__profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket-entry__profile__picture {
+    position: relative;
+
+    width: 74px;
+    height: 74px;
+    margin-right: 23px;
+
+    background-color: $picture-background;
+
+    &[data-amount]:after {
+        content: attr(data-amount);
+
+        position: absolute;
+        top: -8px;
+        right: -12px;
+
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        width: 25px;
+        height: 25px;
+
+        font: {
+            size: $font-size;
+            weight: 600;
+        }
+
+        color: $white;
+
+        line-height: 1.4;
+
+        background: $picture-amount-background;
+
+        border-radius: 50%;
+    }
+}
+
+.basket-entry__profile__picture__image {
+    width: 100%;
+    height: 100%;
+}
+
+.basket-entry__profile__name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.basket-entry__pricing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+
+    width: 400px;
+
+    &--simple {
+        width: auto;
+    }
+
+    .basket-entry__pricing__first {
+        display: flex;
+
+        flex-direction: row;
+    }
+}
+
+.basket-entry__pricing__price {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+
+    font-size: $font-size--larger;
+}
+
+.basket-entry__pricing__total {
+    display: flex;
+    align-items: center;
+
+    font: {
+        size: 18px;
+        weight: 600;
+    }
+}
+
+.basket-entry__pricing__controls {
+    display: flex;
+}
+
+.basket-entry__pricing__control__input {
+    width: 40px;
+    margin: 0 4px;
+
+    text-align: center;
+}

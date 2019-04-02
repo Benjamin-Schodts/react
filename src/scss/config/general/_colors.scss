@@ -7,5 +7,49 @@
 
 /* Default
    ========================================================================== */
-$white:  #FFFFFF;
-$black:  #000000;
+
+$black:         #000000;
+
+$tiber:         #0A3039;
+
+$bayoux:        #48646F;
+
+$blue--darker:  #0E80D3;
+$blue:          #6BABE0;
+
+$red:           #C9443C;
+
+$cowboy:        #4C2A2E;
+
+$grey--dark:    #C7C9CD;
+$grey--darker:  #D8D8D8;
+$grey:          #EEEFF0;
+$grey--lighter: #FAFAFA;
+
+$white:         #FFFFFF;
+
+/* Specified
+   ========================================================================== */
+$picture-background:        $grey;
+$picture-amount-background: $blue--darker;
+
+$form-input:                $tiber;
+$form-input-placeholder:    rgba($tiber, .6);
+$form-input-border-color:   $grey--dark;
+
+$button-background:         $bayoux;
+$button-color:              $white;
+
+$header-color:              $cowboy;
+
+$text-color:                $black;
+
+$border-color:              $grey--darker;
+
+$flash-message-background:  $blue;
+$flash-message-color:       $white;
+
+$promo-background--red:     $red;
+$promo-code-color:          $white;
+$promo-color--black:        $black;
+$promo-color--red:          $red;

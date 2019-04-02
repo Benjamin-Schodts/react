@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Blocks - Promo
+   ========================================================================== */
+
+.promo {
+    color: $promo-color--black;
+
+    font-size: $font-size--smaller;
+
+    .promo__code {
+        display: inline-flex;
+
+        padding: 5px 9px;
+
+        font-weight: 600;
+
+        border-radius: 4px;
+    }
+
+    .promo__description {
+        margin-top: 7px;
+
+        font-style: italic;
+
+        .promo__description__text {
+            &--bold {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &--red {
+        .promo__code {
+            color: $promo-code-color;
+
+            background-color: $promo-background--red;
+        }
+    }
+}

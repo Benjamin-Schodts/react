@@ -4,8 +4,96 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width">
         <meta name="format-detection" content="telephone=no">
-        <title>title</title>
+        <title>Shopping Basket</title>
     <body>
         <div id="root"></div>
+
+        <div class="container" style="border-top: 5px solid #000000; display: none;">
+
+            <br><br>
+            <!-- Flash Message -->
+            <div class="flash-message">
+                Korting: (ENDOFSUM2017 -€10,00)
+                <object type="image/svg+xml" data="./img/close.svg" class="flash-message__close"></object>
+            </div>
+
+            <br><br>
+            <!-- Promo -->
+            <div class="promo promo--red">
+                <div class="promo__code">
+                    5plus1
+                </div>
+                <div class="promo__description text--red">
+                    <span class="promo__description__text--bold">Bestel nog 5 flessen</span> voor onze 5plus1
+                </div>
+            </div>
+
+            <br><br>
+            <!-- Button -->
+            <div class="btn btn--primary">
+                Pas toe
+            </div>
+
+            <br><br>
+            <!-- Form -->
+            <input type="text" name="input" id="input" class="form-control" placeholder="placeholder" />
+
+            <br><br>
+            <!-- Item -->
+            <div class="basket-entry">
+                <div class="basket-entry__profile">
+                    <picture class="basket-entry__profile__picture">
+                        <img src="https://picsum.photos/200?random" class="basket-entry__profile__picture__image"></img>
+                    </picture>
+
+                    <div class="basket-entry__profile__name">
+                        <h3 class="basket-entry__profile__name__title">2017 Vermentino (0,75L)</h3>
+                        <span class="basket-entry__profile__name__subtitle">Casanova della Spinetta</span>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <!-- Item with price -->
+            <div class="basket-entry">
+                <div class="basket-entry__profile">
+                    <picture class="basket-entry__profile__picture">
+                        <img src="https://picsum.photos/200?random" class="basket-entry__profile__picture__image"></img>
+                    </picture>
+
+                    <div class="basket-entry__profile__name">
+                        <h3 class="basket-entry__profile__name__title">2017 Vermentino (0,75L)</h3>
+                        <span class="basket-entry__profile__name__subtitle">Casanova della Spinetta</span>
+                    </div>
+                </div>
+
+                <div class="basket-entry__pricing basket-entry__pricing--simple">
+                    <span class="basket-entry__pricing__price">
+                        €&nbsp;25.00
+                    </span>
+                </div>
+            </div>
+
+            <br><br>
+            <!-- Item with price and amount-->
+            <div class="basket-entry">
+                <div class="basket-entry__profile">
+                    <picture class="basket-entry__profile__picture" data-amount="1">
+                        <img src="https://picsum.photos/200?random" class="basket-entry__profile__picture__image"></img>
+                    </picture>
+
+                    <div class="basket-entry__profile__name">
+                        <h3 class="basket-entry__profile__name__title">2017 Vermentino (0,75L)</h3>
+                        <span class="basket-entry__profile__name__subtitle">Casanova della Spinetta</span>
+                    </div>
+                </div>
+
+                <div class="basket-entry__pricing basket-entry__pricing--simple">
+                    <span class="basket-entry__pricing__price">
+                        €&nbsp;25.00
+                    </span>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
