@@ -17,3 +17,13 @@
         width: 1170px;
     }
 }
+
+.splitview {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    > * {
+        flex: 1;
+    }
+}

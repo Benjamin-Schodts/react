@@ -1,6 +1,11 @@
 /* ==========================================================================
    General - Base
    ========================================================================== */
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
 
 html {
     background-color: $white;
@@ -14,7 +19,7 @@ body {
     font: {
         size: $font-size;
         family: $font-family--primary;
-        weight: 400;
+        weight: 300;
     }
 
     color: $text-color;

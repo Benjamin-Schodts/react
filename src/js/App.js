@@ -1,25 +1,27 @@
 import React, {Component} from 'react';
-import {push} from './utils/remoteState';
+import {fetch, push} from './utils/remoteState';
 
 import '../scss/style.scss';
 
 class App extends Component {
-    state = {
-        title: 'Uw Winkelmandje'
-    };
+    constructor() {
+        super();
+        this.state = fetch();
+        this.state.title = 'Uw Winkelmandje';
+    }
 
     render() {
         return (
-            <div className="app">
-                <div className="container">
-                    <h2>{this.state.title}</h2>
-                    <button className="btn btn--primary" onClick={this.nextStep}>Add an item</button>
-                </div>
+            <div>
+                {this.state.lastRoute
+                    ? this.props.history.push(this.state.lastRoute)
+                    : this.pushState()
+                }
             </div>
         );
     }
 
-    nextStep = () => {
+    pushState = () => {
         push(
             {
                 allItems: {
@@ -59,11 +61,11 @@ class App extends Component {
                     percentage: false,
                     amount: 10.00
                 },
-                subTotal: 0.00
+                subTotal: 0.00,
+                lastRoute: '/step1'
             }
         );
-
-        this.props.history.push('/step1');
+        window.location = '/';
     }
 }
 

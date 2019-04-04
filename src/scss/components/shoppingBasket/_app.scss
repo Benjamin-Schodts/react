@@ -1,3 +1,9 @@
+#root {
+    display: flex;
+
+    min-height: 100%;
+}
+
 .app {
     width: 100%;
 }
@@ -5,10 +11,23 @@
 .step {
     display: flex;
     flex-direction: row;
-
-    height: 100vh;
+    width: 100%;
+    padding-bottom: 100px;
 }
 
 .step1 {
     background-color: $grey--lighter;
+}
+
+.delivery-method {
+    background: linear-gradient(to right, $grey--lighter 0%, $grey--lighter 50%, $white 50%, $white 100%);
+}
+
+.splitview__first {
+    background-color: $grey--lighter;
+}
+
+.splitview__second {
+    padding-left: 65px;
+    background-color: $white;
 }

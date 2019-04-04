@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Benjamin-Schodts/react.git"
+    "url": "git+https://github.com/Benjamin-Schodts/Shopping-Basket.git"
   },
   "keywords": [
     "node",
     "react"
   ],
-  "author": "MrGrunty",
+  "author": "Benjamin Schodts",
   "license": "GPL",
   "bugs": {
-    "url": "https://github.com/Benjamin-Schodts/react/issues"
+    "url": "https://github.com/Benjamin-Schodts/Shopping-Basket/issues"
   },
-  "homepage": "https://github.com/Benjamin-Schodts/react#readme",
+  "homepage": "https://github.com/Benjamin-Schodts/Shopping-Basket#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
