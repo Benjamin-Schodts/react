@@ -82,7 +82,13 @@
     .basket-entry__pricing__first {
         display: flex;
 
+        flex-direction: column;
+    }
+
+    .basket-entry__pricing__first__top {
+        display: flex;
         flex-direction: row;
+        margin-bottom: 10px;
     }
 }
 

@@ -69,6 +69,7 @@ class Step1 extends Component {
                                         id="deliver1"
                                         onChange={this.updateDeliverySelection}
                                         checked={this.state.deliveryMethod === 'pickup'}
+                                        data-cost='0.00'
                                     />
                                     <label htmlFor="deliver1" className="radio__label">
                                         Ophalen bij ons
@@ -95,6 +96,7 @@ class Step1 extends Component {
                                         id="deliver2"
                                         onChange={this.updateDeliverySelection}
                                         checked={this.state.deliveryMethod === 'deliver'}
+                                        data-cost='9.95'
                                     />
                                     <label htmlFor="deliver2" className="radio__label">
                                         Standaard verzending (€9,95)
@@ -119,7 +121,7 @@ class Step1 extends Component {
                             </div>
 
                             <div className="basket__travelexpenses">
-                                <span>Verzendkosten:</span> €&nbsp;{parseFloat(this.getTotal()).toFixed(2)}
+                                <span>Verzendkosten:</span> €&nbsp;{parseFloat(this.state.deliverycost).toFixed(2)}
                             </div>
 
                             <div className="basket__total">
@@ -153,7 +155,8 @@ class Step1 extends Component {
         const currentTarget = event.target;
 
         this.setState(() => ({
-            deliveryMethod: currentTarget.value
+            deliveryMethod: currentTarget.value,
+            deliverycost: currentTarget.dataset.cost
         }));
     }
 
@@ -237,7 +240,9 @@ class Step1 extends Component {
         return vatTotal;
     }
 
-    getTotal = () => this.getSubTotal() + this.getVATTotal() - this.getReduction();
+    getTotal = () => this.getSubTotal() + this.getVATTotal() - this.getReduction() + this.getDeliveryCost();
+
+    getDeliveryCost = () => parseFloat(this.state.deliverycost);
 
     getReduction = () => {
         let reduction = 0;

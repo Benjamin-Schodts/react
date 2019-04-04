@@ -4,6 +4,7 @@
 $radio-top: 3px;
 $radio-outer-size: 16px;
 $radio-inner-size: 14px;
+$radio-inner-size--checked: 8px;
 $radio-inner-offset: ($radio-outer-size - $radio-inner-size) / 2;
 
 input[type=radio] {
@@ -88,11 +89,8 @@ input[type=radio] {
     }
 
     &:checked + label:after {
-        top: $radio-top + 5;
-        left: 5px;
-
-        width: 8px;
-        height: 8px;
+        transform: scale(.5);
+        transform-origin: $radio-inner-size--checked;
     }
 
     &:checked + label {

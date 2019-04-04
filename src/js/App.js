@@ -46,7 +46,7 @@ class App extends Component {
                         imageUrl: 'https://picsum.photos/200/?random',
                         promo: {
                             title: '5plus1',
-                            condition: 4
+                            condition: 6
                         },
                         vat: 21
                     }
@@ -61,7 +61,7 @@ class App extends Component {
                     percentage: false,
                     amount: 10.00
                 },
-                subTotal: 0.00,
+                deliverycost: 0.00,
                 lastRoute: '/step1'
             }
         );
