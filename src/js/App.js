@@ -62,10 +62,10 @@ class App extends Component {
                     amount: 10.00
                 },
                 deliverycost: 0.00,
-                lastRoute: '/step1'
+                lastRoute: 'file:///Volumes/Projects/shopping-basket/dist/index.html/step1'
             }
         );
-        window.location = '/';
+        window.location = 'file:///Volumes/Projects/shopping-basket/dist/index.html';
     }
 }
 
