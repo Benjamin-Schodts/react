@@ -83,7 +83,8 @@ module.exports = {
             filename: paths.cradle.css.output
         }),
         new StyleLintPlugin({
-            syntax: 'scss'
+            syntax: 'scss',
+            fix: true
         }),
         new WebpackNotifierPlugin({
             contentImage: '',
