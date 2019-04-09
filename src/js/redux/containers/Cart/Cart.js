@@ -4,8 +4,7 @@ import {useTranslation} from 'react-i18next';
 
 
 import * as actionTypes from '../../constants/ActionTypes';
-
-import BasketEntry from '../../../shoppingBasket/BasketEntry';
+import CartItem from '../../components/CartItem';
 
 function Cart(props) {
     const {t, i18n} = useTranslation('translation', {useSuspense: false});
@@ -13,7 +12,7 @@ function Cart(props) {
     const createCartItems = () => {
         const cart = props.itemsInCart.map((item) => {
             const product = props.products[item.id];
-            return (<BasketEntry
+            return (<CartItem
                 key={item.id}
                 id={item.id}
                 entry={product}

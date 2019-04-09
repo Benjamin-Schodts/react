@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 import reducer from './redux/reducers/index';
 import Cart from './redux/containers/Cart/Cart';
 
-import NotFound from './steps/NotFound';
+import NotFound from './redux/containers/NotFound/NotFound';
 import DeliveryMethod from './steps/DeliveryMethod';
 
 import '../scss/style.scss';
