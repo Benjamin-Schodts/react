@@ -4,12 +4,12 @@ import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
-import reducer from './reducers/index';
-import Cart from './containers/Cart/Cart';
+import reducer from './redux/reducers/index';
+import Cart from './redux/containers/Cart/Cart';
 
-import NotFound from './containers/NotFound/NotFound';
-import DeliveryMethod from './containers/DeliveryMethod/DeliveryMethod';
-import Loader from './components/Loader';
+import NotFound from './redux/containers/NotFound/NotFound';
+import DeliveryMethod from './redux/containers/DeliveryMethod/DeliveryMethod';
+import Loader from './redux/components/Loader';
 
 import '../scss/style.scss';
 

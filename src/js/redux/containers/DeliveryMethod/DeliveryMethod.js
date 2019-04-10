@@ -31,7 +31,12 @@ function DeliveryMethod(props) {
                                 verzendsmethode
                             </span>
                             <div className="chosen-method__second">
-                                Standaard verzending <a href="#" onClick={this.backToOverview}>Wijzigen</a>
+                                Standaard verzending
+                                <Link
+                                    to={'/'}
+                                >
+                                    {t('modify')}
+                                </Link>
                                 <br/>
                                 Morgen (donderdag 19 februari) in huis tussen 09.00 en 17.00 uur (€9,95)
                             </div>
