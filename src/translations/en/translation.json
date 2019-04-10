@@ -22,5 +22,7 @@
     "modify": "Modify",
 
     "404": "404 - Page not found",
-    "return_to": "Return to {{page}}"
+    "return_to": "Return to {{page}}",
+
+    "radio_time": "{{from}} - {{to}}"
 }

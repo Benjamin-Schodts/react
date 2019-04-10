@@ -2,19 +2,22 @@
    General - Header
    ========================================================================== */
 .container {
+    width: 100%;
+    max-width: $container-width + ($container-padding * 2);
     margin: 0 auto;
-    padding: 0 15px;
+    padding-right: $container-padding;
+    padding-left: $container-padding;
 
     @media (min-width: $screen-sm) {
-        width: 750px;
+        max-width: $container-width + ($container-padding--sm * 2);
+        padding-right: $container-padding--sm;
+        padding-left: $container-padding--sm;
     }
 
     @media (min-width: $screen-md) {
-        width: 970px;
-    }
-
-    @media (min-width: $screen-xl) {
-        width: 1170px;
+        max-width: $container-width + ($container-padding--md * 2);
+        padding-right: $container-padding--md;
+        padding-left: $container-padding--md;
     }
 }
 

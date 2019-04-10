@@ -1,20 +1,26 @@
 /* ==========================================================================
    General - Base
    ========================================================================== */
-html,
-body {
-    width: 100%;
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+/* Html & body
+   ========================================================================== */
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
     height: 100%;
 }
 
-html {
-    background-color: $white;
-}
-
 body {
-    width: 100% !important;
-    margin: 0;
-    padding: 0;
+    min-height: 100%;
 
     font: {
         size: $font-size;
@@ -25,9 +31,6 @@ body {
     color: $text-color;
 
     background: $white;
-
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
 }
 
 .text--red {

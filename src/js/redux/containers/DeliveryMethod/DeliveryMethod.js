@@ -4,6 +4,7 @@ import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 
 import SummaryItem from '../../components/SummaryItem';
+import Radio from '../../components/Radio';
 
 function DeliveryMethod(props) {
     const {t} = useTranslation('translation');
@@ -57,6 +58,13 @@ function DeliveryMethod(props) {
                         </span>
 
                         <hr/>
+
+                        <Radio
+                            name="deliverytime"
+                            id="deliverytime0"
+                            value="09001700"
+                            label={t('radio_time', {from: '09.00', to: '17.00'})}
+                        ></Radio>
 
                         <div className="radio">
                             <input

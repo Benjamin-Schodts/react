@@ -22,5 +22,7 @@
     "modify": "Wijzigen",
 
     "404": "404 - Pagina niet gevonden",
-    "return_to": "Keer terug naar {{page}}"
+    "return_to": "Keer terug naar {{page}}",
+
+    "radio_time": "{{from}} - {{to}} uur"
 }

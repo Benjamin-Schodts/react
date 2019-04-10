@@ -3,7 +3,7 @@ import * as actionTypes from '../constants/ActionTypes';
 const initialState = {
     addedItems: [
         {
-            id: 41269,
+            id: 'rnd',
             amount: 1
         },
         {
