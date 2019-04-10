@@ -84,7 +84,12 @@ function Cart(props) {
                                 />
 
                                 <button className="btn btn--primary reduction__input-container__button">
-                                    {t('apply')}
+                                    <span className="hidden-on-desktop">
+                                        +
+                                    </span>
+                                    <span className="hidden-on-mobile">
+                                        {t('apply')}
+                                    </span>
                                 </button>
                             </div>
                         </div>

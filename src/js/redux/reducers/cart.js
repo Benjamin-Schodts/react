@@ -74,12 +74,8 @@ const cart = (state = initialState, action) => {
             return removeProductFromCart(state, action);
         }
         case actionTypes.UPDATE_AMOUNT_IN_CART: {
-            if (parseInt(action.payload, 10) === 0) {
-                return removeProductFromCart(state, action);
-            }
-
             const newState = state.addedItems.map((item) => {
-                if (item.id.toString() === action.productId.toString()) {
+                if (item.id.toString() === action.productId.toString() && action.payload > 0) {
                     return {
                         id: item.id,
                         amount: parseInt(action.payload, 10)

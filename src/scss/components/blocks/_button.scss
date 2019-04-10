@@ -35,4 +35,9 @@
     + .btn {
         margin-left: 2px;
     }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: .5;
+    }
 }

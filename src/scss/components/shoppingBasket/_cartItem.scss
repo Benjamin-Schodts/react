@@ -83,11 +83,11 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        margin-top: 20px;
     }
 
     @media (min-width: $screen-lg) {
         flex-wrap: nowrap;
+        margin-top: 20px;
     }
 }
 

@@ -10,4 +10,8 @@ a:visited {
     color: $link-color;
 
     text-decoration: none;
+
+    &.btn {
+        color: $button-color;
+    }
 }
