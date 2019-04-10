@@ -1,29 +1,32 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
-import reducer from './redux/reducers/index';
-import Cart from './redux/containers/Cart/Cart';
+import reducer from './reducers/index';
+import Cart from './containers/Cart/Cart';
 
-import NotFound from './redux/containers/NotFound/NotFound';
-import DeliveryMethod from './steps/DeliveryMethod';
+import NotFound from './containers/NotFound/NotFound';
+import DeliveryMethod from './containers/DeliveryMethod/DeliveryMethod';
+import Loader from './components/Loader';
 
 import '../scss/style.scss';
 
-import './redux/i18n';
+import './i18n/i18n';
 
 const store = createStore(reducer);
 
 const reduxRouting = (
     <Provider store={store}>
         <Router>
-            <Switch>
-                <Route exact path="/" component={Cart} />
-                <Route path="/delivery-method" component={DeliveryMethod} />
-                <Route component={NotFound} />
-            </Switch>
+            <Suspense fallback={<Loader />}>
+                <Switch>
+                    <Route exact path="/" component={Cart} />
+                    <Route path="/delivery-method" component={DeliveryMethod} />
+                    <Route component={NotFound} />
+                </Switch>
+            </Suspense>
         </Router>
     </Provider>
 );

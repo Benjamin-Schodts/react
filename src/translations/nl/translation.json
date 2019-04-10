@@ -1,20 +1,26 @@
 {
     "title": "Uw Winkelmandje",
-    "subtotal_excl": "Subtotaal (excl. BTW):",
-    "subtotal_incl": "Subtotaal:",
+    "delivery_method_title": "Bezorgmoment kiezen",
+    "subtotal_excl": "Subtotaal (excl. BTW): ",
+    "subtotal_incl": "Subtotaal: ",
     "minus_currency": "- € ",
     "vat": "BTW:",
-    "reduction": "Korting:",
+    "reduction": "Korting: ",
     "apply": "Pas toe",
     "order_delivery": "Bezorging & Ophalen",
     "pickup": "Ophalen bij ons",
-    "pickup_on": "Afhalen op vrijdag 17 januari 2019",
+    "pickup_on": "Afhalen op vrijdag {{day}} {{month}} {{year}}",
     "change_day": "Wijzig dag",
     "delivery_standard": "Standaard verzending (€9,95)",
     "delivery_on": "Morgen in huis tussen 09:00 en 17:00 uur",
     "update_delivery_moment": "Wijzig bezorgmoment",
     "promo_message": "Bestel nog voor €45,05 extra aan artikelen en je bestelling wordt gratis verzonden",
-    "delivery_cost": "Verzendkost:",
+    "delivery_cost": "Verzendkost: ",
     "to_checkout": "Naar de kassa",
-    "promo_code": "Kortingscode"
+    "promo_code": "Kortingscode",
+    "cart_summary_title": "Winkelwagen ",
+    "modify": "Wijzigen",
+
+    "404": "404 - Pagina niet gevonden",
+    "return_to": "Keer terug naar {{page}}"
 }

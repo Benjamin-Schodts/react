@@ -1,20 +1,26 @@
 {
     "title": "Your Shopping Cart",
-    "subtotal_excl": "Subtotal (excl. VAT):",
-    "subtotal_incl": "Subtotal:",
+    "delivery_method_title": "Choose delivery moment",
+    "subtotal_excl": "Subtotal (excl. VAT): ",
+    "subtotal_incl": "Subtotal: ",
     "minus_currency": "- € ",
-    "vat": "VAT:",
-    "reduction": "Promo:",
+    "vat": "VAT: ",
+    "reduction": "Promo: ",
     "apply": "Apply",
     "order_delivery": "Order & Delivery",
     "pickup": "Pick up at store",
-    "pickup_on": "Pick up on Friday January 17 2019",
+    "pickup_on": "Pick up on Friday January {{day}} {{year}}",
     "change_day": "Change day",
     "delivery_standard": "Standard delivery (€9,95)",
     "delivery_on": "Tomorrow at home between 09:00 and 17:00",
     "update_delivery_moment": "Update delivery moment",
     "promo_message": "Order a total of €45,05 more and the delivery will be free",
-    "delivery_cost": "Delivery cost:",
+    "delivery_cost": "Delivery cost: ",
     "to_checkout": "Checkout",
-    "promo_code": "Promo code"
+    "promo_code": "Promo code",
+    "cart_summary_title": "Shopping Cart ",
+    "modify": "Modify",
+
+    "404": "404 - Page not found",
+    "return_to": "Return to {{page}}"
 }

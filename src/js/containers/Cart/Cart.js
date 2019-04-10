@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {useTranslation} from 'react-i18next';
-
+import {Link} from 'react-router-dom';
 
 import * as actionTypes from '../../constants/ActionTypes';
 import CartItem from '../../components/CartItem';
 
 function Cart(props) {
-    const {t, i18n} = useTranslation('translation', {useSuspense: false});
+    const {t, i18n} = useTranslation('translation');
 
     const createCartItems = () => {
         const cart = props.itemsInCart.map((item) => {
@@ -27,15 +27,11 @@ function Cart(props) {
         return cart;
     };
 
-    const toDeliveryMethod = () => {
-        props.history.push('/delivery-method');
-    };
-
     return (
         <div className="step step1">
-            <button onClick={() => i18n.changeLanguage('nl')}>nl</button>
-            <button onClick={() => i18n.changeLanguage('en')}>en</button>
             <div className="container">
+                <button onClick={() => i18n.changeLanguage('nl')}>nl</button>
+                <button onClick={() => i18n.changeLanguage('en')}>en</button>
                 <h2>{t('title')}</h2>
 
                 <div className="basket">
@@ -108,16 +104,15 @@ function Cart(props) {
                                     {t('pickup')}
 
                                     <span className="radio__label__subtext">
-                                        {t('pickup_on')}
+                                        {t('pickup_on', {day: 18, month: 'januari', year: 2019})}
                                     </span>
 
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to={'/delivery-method'}
                                         className="radio__label__link"
-                                        onClick={toDeliveryMethod}
                                     >
                                         {t('change_day')}
-                                    </a>
+                                    </Link>
                                 </label>
                             </div>
 
@@ -137,13 +132,12 @@ function Cart(props) {
                                         {t('delivery_on')}
                                     </span>
 
-                                    <a
-                                        href="#"
-                                        onClick={toDeliveryMethod}
+                                    <Link
+                                        to={'/delivery-method'}
                                         className="radio__label__link"
                                     >
                                         {t('update_delivery_moment')}
-                                    </a>
+                                    </Link>
                                 </label>
                             </div>
 
@@ -160,12 +154,12 @@ function Cart(props) {
                             <span>{t('subtotal_incl')}</span> €&nbsp;{parseFloat(props.total).toFixed(2)}
                         </div>
 
-                        <button
+                        <Link
+                            to={'/delivery-method'}
                             className="btn btn--primary basket__submit"
-                            onClick={toDeliveryMethod}
                         >
                             {t('to_checkout')}
-                        </button>
+                        </Link>
                     </aside>
                 </div>
             </div>
