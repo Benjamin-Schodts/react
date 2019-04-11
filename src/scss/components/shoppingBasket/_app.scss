@@ -20,7 +20,11 @@
 }
 
 .delivery-method {
-    background: linear-gradient(to right, $grey--lighter 0%, $grey--lighter 50%, $white 50%, $white 100%);
+    background-color: $white;
+
+    @media (min-width: $screen-lg) {
+        background: linear-gradient(to right, $grey--lighter 0%, $grey--lighter 50%, $white 50%, $white 100%);
+    }
 }
 
 .splitview__first {
@@ -28,6 +32,5 @@
 }
 
 .splitview__second {
-    padding-left: 65px;
     background-color: $white;
 }

@@ -10,19 +10,18 @@ function Cart(props) {
     const {t, i18n} = useTranslation('translation');
 
     const createCartItems = () => {
-        const cart = props.itemsInCart.map((item) => {
-            const product = props.products[item.id];
-            return (<CartItem
-                key={item.id}
-                id={item.id}
-                entry={product}
-                amount={item.amount}
+        const cart = props.itemsInCart.map((item) => (
+            <CartItem
+                key={item.metadata.id}
+                orderLineIndex={item.index}
+                orderIndex={props.cart.order.index}
+                entry={item}
+                amount={item.quantity}
                 onChange={props.updateAmount}
                 increaseAmount={props.increaseAmount}
                 decreaseAmount={props.decreaseAmount}
                 removeEntry={props.removeFromCart}
-            />);
-        });
+            />));
 
         return cart;
     };
@@ -43,24 +42,22 @@ function Cart(props) {
                         <div className="basket__checkout">
 
                             {/* Reduction Amount */}
-                            {props.reduction ? (
-                                <div className="basket__checkout__reduction">
-                                    <span className="basket__checkout__reduction__name">
-                                        {props.reduction.name}
-                                    </span>
+                            <div className="basket__checkout__reduction">
+                                <span className="basket__checkout__reduction__name">
+                                    Korting:
+                                </span>
 
-                                    <span className="basket__checkout__reduction__amount">
-                                        {t('minus_currency')}{parseFloat(props.reduction.amount).toFixed(2)}
-                                    </span>
-                                </div>
-                            ) : ''}
+                                <span className="basket__checkout__reduction__amount">
+                                    {t('minus_currency')}{parseFloat(props.cart.totalDiscount).toFixed(2)}
+                                </span>
+                            </div>
 
                             <div className="basket__checkout__subTotal">
                                 <span>{t('subtotal_excl')}</span>
-                                €&nbsp;{parseFloat(props.total).toFixed(2)}
+                                €&nbsp;{parseFloat(props.cart.costExclShipping).toFixed(2)}
                             </div>
                             <div className="basket__checkout__vatTotal">
-                                <span>{t('vat')}</span> 21%
+                                <span>{t('vat')}</span> {props.cart.vatExclShipping}
                             </div>
                         </div>
 
@@ -154,11 +151,11 @@ function Cart(props) {
                         </div>
 
                         <div className="basket__travelexpenses">
-                            <span>{t('delivery_cost')}</span> €&nbsp;{parseFloat(props.deliveryCost).toFixed(2)}
+                            <span>{t('delivery_cost')}</span> €&nbsp;{parseFloat(props.cart.shippingCost).toFixed(2)}
                         </div>
 
                         <div className="basket__total">
-                            <span>{t('subtotal_incl')}</span> €&nbsp;{parseFloat(props.total).toFixed(2)}
+                            <span>{t('subtotal_incl')}</span> €&nbsp;{parseFloat(props.cart.totalCost).toFixed(2)}
                         </div>
 
                         <Link
@@ -176,7 +173,8 @@ function Cart(props) {
 
 const mapStateToProps = (state) => (
     {
-        itemsInCart: state.cart.addedItems,
+        itemsInCart: state.cart.cart.orderLines,
+        cart: state.cart.cart,
         products: state.products.products,
         reduction: state.cart.reduction,
         total: state.cart.total,
@@ -190,20 +188,23 @@ const mapDispatchToProps = (dispatch) => (
         updateAmount: (event) => dispatch({
             type: actionTypes.UPDATE_AMOUNT_IN_CART,
             payload: event.target.value,
-            productId: event.target.id
+            orderLineIndex: event.target.id,
+            orderIndex: event.target.dataset.orderindex
         }),
         increaseAmount: (event) => dispatch({
             type: actionTypes.ADD_TO_CART,
-            productId: event.target.id
+            orderLineIndex: event.target.id,
+            orderIndex: event.target.dataset.orderindex
         }),
         decreaseAmount: (event) => dispatch({
             type: actionTypes.REMOVE_FROM_CART,
-            productId: event.target.id
+            orderLineIndex: event.target.id,
+            orderIndex: event.target.dataset.orderindex
         }),
         removeFromCart: (event) => dispatch({
-            type: actionTypes.REMOVE_FROM_CART,
-            delete: true,
-            productId: event.target.id
+            type: actionTypes.DELETE_FROM_CART,
+            orderLineIndex: event.target.id,
+            orderIndex: event.target.dataset.orderindex
         }),
         updateDeliveryMethod: (event) => dispatch({
             type: actionTypes.UPDATE_DELIVERY_METHOD,

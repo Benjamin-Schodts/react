@@ -23,10 +23,30 @@
 
 .splitview {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 100%;
 
     > * {
         flex: 1;
+    }
+
+    .splitview__first {
+        order: 2;
+    }
+
+    .splitview__second {
+        order: 1;
+    }
+
+    @media (min-width: $screen-lg) {
+        flex-direction: row;
+
+        .splitview__first {
+            order: 1;
+        }
+
+        .splitview__second {
+            order: 2;
+        }
     }
 }

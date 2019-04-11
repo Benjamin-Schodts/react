@@ -1,0 +1,176 @@
+{
+    "transportOptions": [
+      {
+        "type": "external",
+        "earliest": {
+          "id": "5",
+          "dayOfWeek": "5",
+          "date": {
+            "date": "2019-04-12 10:29:16.873172",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "lastOrderTime": {
+            "date": "2019-04-11 15:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "openingTimeAm": {
+            "date": "2019-04-11 09:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "closingTimeAm": {
+            "date": "2019-04-11 12:30:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "openingTimePm": {
+            "date": "2019-04-11 17:56:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "closingTimePm": {
+            "date": "2019-04-11 17:56:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "opened": "no",
+          "isException": false,
+          "shipping": true
+        },
+        "options": [
+          {
+            "title": "Belgi\u00eb (+ &euro;&nbsp;9,95) - gratis bij aankoop van &euro;&nbsp;100,00",
+            "id": "BE"
+          },
+          {
+            "title": "Frankrijk (+ &euro;&nbsp;15,00) - gratis bij aankoop van &euro;&nbsp;195,00",
+            "id": "FR"
+          },
+          {
+            "title": "Luxemburg (+ &euro;&nbsp;9,95) - gratis bij aankoop van &euro;&nbsp;195,00",
+            "id": "LU"
+          },
+          {
+            "title": "Nederland (+ &euro;&nbsp;9,95) - gratis bij aankoop van &euro;&nbsp;195,00",
+            "id": "NL"
+          }
+        ]
+      },
+      {
+        "type": "pickup",
+        "earliest": {
+          "id": "4",
+          "dayOfWeek": "4",
+          "date": {
+            "date": "2019-04-11 10:29:16.873172",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "lastOrderTime": {
+            "date": "2019-04-11 15:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "openingTimeAm": {
+            "date": "2019-04-11 09:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "closingTimeAm": {
+            "date": "2019-04-11 12:30:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "openingTimePm": {
+            "date": "2019-04-11 17:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "closingTimePm": {
+            "date": "2019-04-11 17:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Brussels"
+          },
+          "opened": "continuously",
+          "isException": false,
+          "shipping": true
+        }
+      }
+    ],
+    "cart": {
+      "costExclShipping": 104.91,
+      "vatExclShipping": 18.21,
+      "orderLines": [
+        {
+          "orderLine": {},
+          "quantity": 3,
+          "unitPrice": 34.97,
+          "costWithoutDiscount": 104.91,
+          "totalDiscount": 0,
+          "totalCost": 104.91,
+          "discounts": [],
+          "index": 0,
+          "orderLines": null,
+          "metadata": {
+            "relatedId": "10446",
+            "relatedModel": "products",
+            "description": "De Solisterraeheet een granaatrode kleur. Het boeket is intens en complex met aroma's van bosfruit, kuirden en aardse toetsen. De smaak is sappig en mooi in evenwicht, nobele tannnies en lange verfijnde afdronk.",
+            "url": "\/nl\/wijnen\/pinot-nero-solisterrae\/10446\/",
+            "id": "191139",
+            "parent_id": null,
+            "total": "104.9070",
+            "sub_total": "86.7000",
+            "vat_total": "18.2070",
+            "discounted_total": "0.0000",
+            "is_shipping_free": false,
+            "shipping_free_from": null,
+            "shipping_free_till": null
+          }
+        }
+      ],
+      "shippingCost": 0,
+      "discounts": [],
+      "totalDiscount": 0,
+      "costExclDiscountAndShipping": 104.91,
+      "vatInclusive": true,
+      "order": {
+        "order": {},
+        "shippingType": "pickup",
+        "fallPriceReached": true,
+        "shippingCost": 0,
+        "shippingTimeCostsApply": true,
+        "shippingCountryCode": "BE",
+        "shippingAddress": null,
+        "shippingData": {},
+        "invoice": {
+          "email": "jonas@inventis.be",
+          "phone": "+32498664137",
+          "company": "",
+          "address": {
+            "firstName": "Bart",
+            "lastName": "Ari\u00ebn",
+            "street": "Weg naar as, 182",
+            "number": "85",
+            "bus": "",
+            "zip": "3660",
+            "city": "Opglabbeek",
+            "countryCode": "BE",
+            "countryName": null,
+            "companyName": null,
+            "companyVat": null,
+            "attn": ""
+          },
+          "code": ""
+        },
+        "totalCost": 0,
+        "itemCount": 0
+      },
+      "marking": [],
+      "totalCost": 104.91,
+      "itemCount": 3
+    },
+    "errors": [],
+    "redirect_to": null
+  }
