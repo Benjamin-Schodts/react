@@ -6,20 +6,65 @@ import {Link} from 'react-router-dom';
 import SummaryItem from '../../components/SummaryItem';
 import Radio from '../../components/Radio';
 
+import getHeight from '../../../utils/elementHeight';
+
+
 function DeliveryMethod(props) {
     const {t} = useTranslation('translation');
 
     const renderSummary = () => {
-        const items = props.itemsInCart.map((item) => {
-            const product = props.products[item.id];
-            return (<SummaryItem
-                key={item.id}
-                entry={product}
-                amount={item.amount}
-            />);
-        });
+        const items = props.itemsInCart.map((item) => (
+            <SummaryItem
+                key={item.index}
+                entry={item}
+                amount={item.quantity}
+            />
+        ));
 
         return items;
+    };
+
+    const renderDefaultDeliveryMomentOptions = () => {
+        const optionsDefault = props.deliveryOptions.default.map((item) => (
+            <Radio
+                key={`deliverytime${item.from}${item.to}`}
+                name="deliverytime"
+                id={`deliverytime${item.from}${item.to}`}
+                value={`${item.from}-${item.to}`}
+                label={t('radio_time', {from: item.from, to: item.to, extra: null})}
+            ></Radio>
+        ));
+
+        return optionsDefault;
+    };
+
+    const renderExtraDeliveryMomentOptions = () => {
+        const optionsExtra = props.deliveryOptions.extra.map((item) => (
+            <Radio
+                key={`deliverytimeExtra${item.from}${item.to}`}
+                name="deliverytime"
+                id={`deliverytimeExtra${item.from}${item.to}`}
+                value={`${item.from}-${item.to}extra`}
+                label={t('radio_time', {from: item.from, to: item.to, extra: item.extra})}
+            ></Radio>
+        ));
+
+        return optionsExtra;
+    };
+
+    const toggleAccordion = (el) => {
+        const cartSummary = el.currentTarget.parentElement.parentElement;
+        const items = cartSummary.querySelector('.cart-summary__items');
+
+        if (cartSummary.classList.contains('collapsed')) {
+            items.style.maxHeight = `${getHeight(items)}px`;
+        } else {
+            items.style.maxHeight = 0;
+        }
+
+        cartSummary.classList.toggle('collapsed');
+        cartSummary.querySelector('.cart-summary__accordion-trigger__link--show').classList.toggle('hidden');
+        cartSummary.querySelector('.cart-summary__accordion-trigger__link--hide').classList.toggle('hidden');
     };
 
     return (
@@ -29,158 +74,38 @@ function DeliveryMethod(props) {
                     <div className="splitview__first">
                         <div className="chosen-method">
                             <span className="chosen-method__first">
-                                verzendsmethode
+                                <h4 className="chosen-method__title">
+                                    Verzendsmethode
+                                </h4>
                             </span>
                             <div className="chosen-method__second">
-                                Standaard verzending
-                                <Link
-                                    to={'/'}
-                                >
-                                    {t('modify')}
-                                </Link>
-                                <br/>
-                                Morgen (donderdag 19 februari) in huis tussen 09.00 en 17.00 uur (€9,95)
+                                <h4 className="chosen-method__title">
+                                    Standaard verzending
+                                </h4>
+                                <div className="chosen-method__description">
+                                    Morgen (donderdag 19 februari) in huis tussen 09.00 en 17.00 uur (€9,95)
+                                    <Link
+                                        to={'/'}
+                                        className="chosen-method__description__link"
+                                    >
+                                        {t('modify')}
+                                    </Link>
+                                </div>
                             </div>
                         </div>
 
-                        <hr/>
-
                         <h2>{t('delivery_method_title')}</h2>
                         Kies het moment dat jou uitkomt
-                        <select>
-                            <option>NU</option>
-                            <option>Later</option>
-                        </select>
+                        <select id="select"></select>
                         <span>
                             Omwille van een zon-, feest- of uitzonderlijke sluitingsdag
                                 kunnen we uw pakket niet op deze datum uitleveren.
                             Kies een andere leverdatum.
                         </span>
 
-                        <hr/>
+                        {renderDefaultDeliveryMomentOptions()}
 
-                        <Radio
-                            name="deliverytime"
-                            id="deliverytime0"
-                            value="09001700"
-                            label={t('radio_time', {from: '09.00', to: '17.00'})}
-                        ></Radio>
-
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="09001700"
-                                id="delivertime1"
-                            />
-                            <label htmlFor="delivertime1" className="radio__label">
-                                09.00 - 17.00 uur
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="08001300"
-                                id="delivertime2"
-                            />
-                            <label htmlFor="delivertime2" className="radio__label">
-                                08.00 - 13.00 uur
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="13001800"
-                                id="delivertime3"
-                            />
-                            <label htmlFor="delivertime3" className="radio__label">
-                                13.00 - 18.00 uur
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="11002200"
-                                id="delivertime4"
-                            />
-                            <label htmlFor="delivertime4" className="radio__label">
-                                11.00 - 22.00 uur
-                            </label>
-                        </div>
-
-                        <hr/>
-
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="08001000"
-                                id="delivertime5"
-                            />
-                            <label htmlFor="delivertime5" className="radio__label">
-                                08.00 - 10.00 uur (+ €9,95)
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="09001100"
-                                id="delivertime6"
-                            />
-                            <label htmlFor="delivertime6" className="radio__label">
-                                09.00 - 11.00 uur (+ €9,95)
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="11001400"
-                                id="delivertime7"
-                            />
-                            <label htmlFor="delivertime7" className="radio__label">
-                                11.00 - 14.00 uur (+ €9,95)
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="14001700"
-                                id="delivertime8"
-                            />
-                            <label htmlFor="delivertime8" className="radio__label">
-                                14.00 - 27.00 uur (+ €9,95)
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="17002100"
-                                id="delivertime9"
-                            />
-                            <label htmlFor="delivertime9" className="radio__label">
-                                17.00 - 21.00 uur (+ €9,95)
-                            </label>
-                        </div>
-                        <div className="radio">
-                            <input
-                                type="radio"
-                                name="deliverytime"
-                                value="18002200"
-                                id="delivertime10"
-                            />
-                            <label htmlFor="delivertime10" className="radio__label">
-                                18.00 - 22.00 uur (+ €9,95)
-                            </label>
-                        </div>
-
-                        <hr/>
+                        {renderExtraDeliveryMomentOptions()}
 
                         <Link
                             to={'/'}
@@ -190,22 +115,39 @@ function DeliveryMethod(props) {
 
                         <Link
                             to={'/'}
-                            className="btn btn--primary basket__submit"
+                            className="btn btn--primary cart__submit"
                         >
                             {t('to_checkout')}
                         </Link>
                     </div>
                     <div className="splitview__second">
-                        <div className="basket-summary__title">
-                            {t('cart_summary_title')}
-                            <Link
-                                to={'/'}
-                            >
-                                {t('modify')}
-                            </Link>
-                        </div>
-                        <div className="basket-summary">
-                            {renderSummary()}
+                        <div className="cart-summary collapsed">
+                            <div className="cart-summary__accordion-trigger">
+                                <a
+                                    href="#"
+                                    onClick={toggleAccordion}
+                                    className="cart-summary__accordion-trigger__link"
+                                >
+                                    <span className="cart-summary__accordion-trigger__link--show">
+                                        {t('show_content')}
+                                    </span>
+                                    <span className="cart-summary__accordion-trigger__link--hide hidden">
+                                        {t('hide_content')}
+                                    </span>
+                                </a>
+                                <span className="cart-summary__accordion-trigger__total">€ {props.cart.totalCost}</span>
+                            </div>
+                            <div className="cart-summary__items">
+                                <div className="">
+                                    {t('cart_summary_title')}
+                                    <Link
+                                        to={'/'}
+                                    >
+                                        {t('modify')}
+                                    </Link>
+                                </div>
+                                {renderSummary()}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -216,12 +158,14 @@ function DeliveryMethod(props) {
 
 const mapStateToProps = (state) => (
     {
-        itemsInCart: state.cart.addedItems,
+        itemsInCart: state.cart.cart.orderLines,
+        cart: state.cart.cart,
         products: state.products.products,
         reduction: state.cart.reduction,
         total: state.cart.total,
         deliveryMethod: state.cart.delivery.method,
-        deliveryCost: state.cart.delivery.cost
+        deliveryCost: state.cart.delivery.cost,
+        deliveryOptions: state.cart.delivery.options
     }
 );
 

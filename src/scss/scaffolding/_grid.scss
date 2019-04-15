@@ -26,15 +26,13 @@
     flex-direction: column;
     height: 100%;
 
-    > * {
-        flex: 1;
-    }
-
     .splitview__first {
+        flex: 1;
         order: 2;
     }
 
     .splitview__second {
+        flex: 1%;
         order: 1;
     }
 
@@ -42,10 +40,12 @@
         flex-direction: row;
 
         .splitview__first {
+            flex: 1 0 50%;
             order: 1;
         }
 
         .splitview__second {
+            flex: 1 0 50%;
             order: 2;
         }
     }

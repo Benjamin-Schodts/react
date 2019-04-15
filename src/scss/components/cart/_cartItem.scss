@@ -15,7 +15,7 @@
     flex: 1 0 250px;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 10px;
 
     @media (min-width: $screen-lg) {
@@ -94,6 +94,10 @@
     align-items: flex-start;
 }
 
+.cart-item__profile__name__subtitle {
+    padding-right: 20px;
+}
+
 .cart-item__pricing {
     display: flex;
     flex-direction: column;
@@ -165,8 +169,3 @@
 
     text-align: center;
 }
-
-.basket-summary {
-    margin: 0 65px;
-}
-

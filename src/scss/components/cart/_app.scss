@@ -28,9 +28,38 @@
 }
 
 .splitview__first {
-    background-color: $grey--lighter;
+    background-color: $white;
+
+    @media (min-width: $screen-lg) {
+        background-color: $grey--lighter;
+    }
 }
 
 .splitview__second {
     background-color: $white;
+}
+
+
+.chosen-method {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+
+    border-bottom: 2px solid $border-color;
+
+    @media (min-width: $screen-sm) {
+        flex-direction: row;
+    }
+}
+
+.chosen-method__first {
+    flex: 1 0 40%;
+}
+
+.chosen-method__second {
+    flex: 1 0 60%;
+}
+
+.chosen-method__description__link {
+    display: block;
 }

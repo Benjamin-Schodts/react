@@ -19,7 +19,59 @@ const initialState = {
     },
     delivery: {
         method: 'pickup',
-        cost: 0
+        cost: 0,
+        options: {
+            default: [
+                {
+                    from: '09.00',
+                    to: '17.00'
+                },
+                {
+                    from: '08.00',
+                    to: '13.00'
+                },
+                {
+                    from: '13.00',
+                    to: '18.00'
+                },
+                {
+                    from: '11.00',
+                    to: '22.00'
+                }
+            ],
+            extra: [
+                {
+                    from: '08.00',
+                    to: '10.00',
+                    extra: '(+ €9,95)'
+                },
+                {
+                    from: '09.00',
+                    to: '11.00',
+                    extra: '(+ €9,95)'
+                },
+                {
+                    from: '11.00',
+                    to: '14.00',
+                    extra: '(+ €9,95)'
+                },
+                {
+                    from: '14.00',
+                    to: '17.00',
+                    extra: '(+ €9,95)'
+                },
+                {
+                    from: '17.00',
+                    to: '21.00',
+                    extra: '(+ €9,95)'
+                },
+                {
+                    from: '18.00',
+                    to: '22.00',
+                    extra: '(+ €9,95)'
+                }
+            ]
+        }
     },
 
     transportOptions: [

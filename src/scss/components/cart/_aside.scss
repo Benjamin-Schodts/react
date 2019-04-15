@@ -1,7 +1,7 @@
 /* ==========================================================================
-   shoppingBasket - aside
+   Cart - aside
    ========================================================================== */
-.basket-sidebar {
+.cart-sidebar {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
@@ -13,7 +13,7 @@
     }
 }
 
-.basket__checkout {
+.cart__checkout {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -64,8 +64,8 @@
     font-style: italic;
 }
 
-.basket__travelexpenses,
-.basket__total {
+.cart__travelexpenses,
+.cart__total {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,6 +78,6 @@
     border-bottom: 2px solid $border-color;
 }
 
-.basket__submit {
+.cart__submit {
     align-self: flex-end;
 }

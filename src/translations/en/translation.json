@@ -24,5 +24,8 @@
     "404": "404 - Page not found",
     "return_to": "Return to {{page}}",
 
-    "radio_time": "{{from}} - {{to}}"
+    "radio_time": "{{from}} - {{to}} {{extra}}",
+
+    "show_content": "Show content",
+    "hide_content": "Hide content"
 }

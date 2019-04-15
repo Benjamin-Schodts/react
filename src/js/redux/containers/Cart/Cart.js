@@ -12,7 +12,7 @@ function Cart(props) {
     const createCartItems = () => {
         const cart = props.itemsInCart.map((item) => (
             <CartItem
-                key={item.metadata.id}
+                key={item.index}
                 orderLineIndex={item.index}
                 orderIndex={props.cart.order.index}
                 entry={item}
@@ -33,30 +33,30 @@ function Cart(props) {
                 <button onClick={() => i18n.changeLanguage('en')}>en</button>
                 <h2>{t('title')}</h2>
 
-                <div className="basket">
-                    <div className="basket__entries">
+                <div className="cart">
+                    <div className="cart__entries">
                         {createCartItems()}
                     </div>
 
-                    <aside className="basket-sidebar">
-                        <div className="basket__checkout">
+                    <aside className="cart-sidebar">
+                        <div className="cart__checkout">
 
                             {/* Reduction Amount */}
-                            <div className="basket__checkout__reduction">
-                                <span className="basket__checkout__reduction__name">
+                            <div className="cart__checkout__reduction">
+                                <span className="cart__checkout__reduction__name">
                                     Korting:
                                 </span>
 
-                                <span className="basket__checkout__reduction__amount">
+                                <span className="cart__checkout__reduction__amount">
                                     {t('minus_currency')}{parseFloat(props.cart.totalDiscount).toFixed(2)}
                                 </span>
                             </div>
 
-                            <div className="basket__checkout__subTotal">
+                            <div className="cart__checkout__subTotal">
                                 <span>{t('subtotal_excl')}</span>
                                 €&nbsp;{parseFloat(props.cart.costExclShipping).toFixed(2)}
                             </div>
-                            <div className="basket__checkout__vatTotal">
+                            <div className="cart__checkout__vatTotal">
                                 <span>{t('vat')}</span> {props.cart.vatExclShipping}
                             </div>
                         </div>
@@ -150,17 +150,17 @@ function Cart(props) {
                             </p>
                         </div>
 
-                        <div className="basket__travelexpenses">
+                        <div className="cart__travelexpenses">
                             <span>{t('delivery_cost')}</span> €&nbsp;{parseFloat(props.cart.shippingCost).toFixed(2)}
                         </div>
 
-                        <div className="basket__total">
+                        <div className="cart__total">
                             <span>{t('subtotal_incl')}</span> €&nbsp;{parseFloat(props.cart.totalCost).toFixed(2)}
                         </div>
 
                         <Link
                             to={'/delivery-method'}
-                            className="btn btn--primary basket__submit"
+                            className="btn btn--primary cart__submit"
                         >
                             {t('to_checkout')}
                         </Link>

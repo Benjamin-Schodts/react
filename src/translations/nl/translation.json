@@ -24,5 +24,8 @@
     "404": "404 - Pagina niet gevonden",
     "return_to": "Keer terug naar {{page}}",
 
-    "radio_time": "{{from}} - {{to}} uur"
+    "radio_time": "{{from}} - {{to}} uur {{extra}}",
+
+    "show_content": "Toon inhoud",
+    "hide_content": "Verberg inhoud"
 }

@@ -1,0 +1,29 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cart-summary__items {
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: all .2s ease;
+
+    @media (min-width: $screen-lg) {
+        max-height: none !important;
+        margin: 0 0 0 65px;
+    }
+}
+
+.cart-summary__accordion-trigger {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 25px 30px 0;
+
+    @media (min-width: $screen-lg) {
+        display: none;
+    }
+}
