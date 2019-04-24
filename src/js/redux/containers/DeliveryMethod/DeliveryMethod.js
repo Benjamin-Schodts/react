@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
+// import CustomSelect from 'vanilla-js-dropdown';
 
 import SummaryItem from '../../components/SummaryItem';
 import Radio from '../../components/Radio';
@@ -96,12 +97,10 @@ function DeliveryMethod(props) {
 
                         <h2>{t('delivery_method_title')}</h2>
                         Kies het moment dat jou uitkomt
-                        <select id="select"></select>
-                        <span>
-                            Omwille van een zon-, feest- of uitzonderlijke sluitingsdag
-                                kunnen we uw pakket niet op deze datum uitleveren.
-                            Kies een andere leverdatum.
-                        </span>
+                        <select id="select">
+                            <option>nu</option>
+                            <option>later</option>
+                        </select>
 
                         {renderDefaultDeliveryMomentOptions()}
 
@@ -155,6 +154,19 @@ function DeliveryMethod(props) {
         </div>
     );
 }
+
+// function initSelects() {
+//     new CustomSelect({
+//         elem: 'select'
+//     });
+// }
+
+// function renderSelects() {
+//     return (<select id="select">
+//         <option>nu</option>
+//         <option>later</option>
+//     </select>);
+// }
 
 const mapStateToProps = (state) => (
     {

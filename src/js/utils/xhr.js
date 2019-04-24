@@ -43,7 +43,7 @@ export function post(url, data) {
                 reject(Error(`Network Error: ${e}`));
             };
 
-            req.open('POST', url);
+            req.open('POST', url, true);
             req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             req.send(data);

@@ -32,25 +32,3 @@ body {
 
     background: $white;
 }
-
-.text--red {
-    color: $red;
-}
-
-.hidden-on-mobile {
-    display: none;
-
-    @media (min-width: $screen-sm) {
-        display: inline-block;
-    }
-}
-
-.hidden-on-desktop {
-    @media (min-width: $screen-sm) {
-        display: none;
-    }
-}
-
-.hidden {
-    display: none;
-}

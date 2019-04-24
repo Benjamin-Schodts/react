@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import * as actionTypes from '../constants/ActionTypes';
+import {post} from '../../utils/xhr';
 
 const initialState = {
     addedItems: [
@@ -350,7 +351,7 @@ const cart = (state = initialState, action) => {
         }
         case actionTypes.DELETE_FROM_CART: {
             const data = {
-                step: 1,
+                step: 2,
                 handlers: [
                     {
                         action: 'orderlineRemoval',
@@ -359,7 +360,8 @@ const cart = (state = initialState, action) => {
                     }
                 ]
             };
-            console.log(data);
+            console.log(post('https://www.licata.dev.ibs/nl/winkelmandje/handle/', JSON.stringify(data)));
+            // console.log(data);
 
             return state;
         }
